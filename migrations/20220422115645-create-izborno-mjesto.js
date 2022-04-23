@@ -22,8 +22,22 @@ module.exports = {
         onDelete: "CASCADE",
         onUpdate: "CASCADE",
       },
+      opstina_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: "Opstinas",
+          key: "id",
+        },
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
+      },
       koordinate: {
         type: Sequelize.STRING,
+        allowNull: false,
+      },
+      eksterni_id: {
+        type: Sequelize.INTEGER,
         allowNull: false,
       },
       createdAt: {

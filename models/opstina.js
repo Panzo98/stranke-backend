@@ -15,12 +15,16 @@ module.exports = (sequelize, DataTypes) => {
       Opstina.hasMany(models.Izborna_grupa, {
         foreignKey: "opstina_id",
       });
+      Opstina.hasMany(models.Izborno_mjesto, {
+        foreignKey: "opstina_id",
+      });
     }
   }
   Opstina.init(
     {
       naziv: DataTypes.STRING,
       entitet_id: DataTypes.INTEGER,
+      eksterni_id: DataTypes.INTEGER,
     },
     {
       sequelize,

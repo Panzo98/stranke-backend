@@ -39,6 +39,7 @@ module.exports = {
       },
       broj_ocekivanih: {
         type: Sequelize.INTEGER,
+        allowNull: false,
       },
       izlaznost_izbornog_mjesta_id: {
         type: Sequelize.INTEGER,

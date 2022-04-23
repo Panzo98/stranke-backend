@@ -12,6 +12,9 @@ module.exports = (sequelize, DataTypes) => {
       Izborno_mjesto.belongsTo(models.Izborna_grupa, {
         foreignKey: "izborna_grupa_id",
       });
+      Izborno_mjesto.belongsTo(models.Opstina, {
+        foreignKey: "opstina_id",
+      });
       Izborno_mjesto.hasMany(models.Rezultati_izbornog_mjesta, {
         foreignKey: "izborno_mjesto_id",
       });
@@ -28,6 +31,8 @@ module.exports = (sequelize, DataTypes) => {
       naziv: DataTypes.STRING,
       izborna_grupa_id: DataTypes.INTEGER,
       koordinate: DataTypes.STRING,
+      eksterni_id: DataTypes.INTEGER,
+      opstina_id: DataTypes.INTEGER,
     },
     {
       sequelize,
