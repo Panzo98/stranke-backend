@@ -24,6 +24,12 @@ module.exports = (sequelize, DataTypes) => {
       Predikcija_izbornog_mjesta.belongsTo(models.User, {
         foreignKey: "kreirao_user_id",
       });
+      Predikcija_izbornog_mjesta.belongsTo(models.Izbori, {
+        foreignKey: "izbori_id",
+      });
+      Predikcija_izbornog_mjesta.belongsTo(models.Podvrsta_izbora, {
+        foreignKey: "podvrsta_izbora_id",
+      });
     }
   }
   Predikcija_izbornog_mjesta.init(
@@ -31,6 +37,8 @@ module.exports = (sequelize, DataTypes) => {
       rezultati_izbornog_mjesta_id: DataTypes.INTEGER,
       kandidat_id: DataTypes.INTEGER,
       izborno_mjesto_id: DataTypes.INTEGER,
+      izbori_id: DataTypes.INTEGER,
+      podvrsta_izbora_id: DataTypes.INTEGER,
       broj_ocekivanih: DataTypes.INTEGER,
       izlaznost_izbornog_mjesta_id: DataTypes.INTEGER,
       kreirao_user_id: DataTypes.INTEGER,

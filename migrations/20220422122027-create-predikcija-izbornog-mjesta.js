@@ -37,6 +37,26 @@ module.exports = {
         onDelete: "CASCADE",
         onUpdate: "CASCADE",
       },
+      izbori_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: "Izboris",
+          key: "id",
+        },
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
+      },
+      podvrsta_izbora_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: "Podvrsta_izboras",
+          key: "id",
+        },
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
+      },
       broj_ocekivanih: {
         type: Sequelize.INTEGER,
         allowNull: false,
